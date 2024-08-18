@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Capsule Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Time Capsule</h1>
+        <form id="timeCapsuleForm">
+            <label for="messageInput">Enter your message:</label>
+            <textarea id="messageInput" required></textarea>
+            <label for="mediaInput">Enter media URL (optional):</label>
+            <input type="text" id="mediaInput" placeholder="Media URL">
+            <label for="openDateInput">Select open date:</label>
+            <input type="datetime-local" id="openDateInput" required>
+            <button type="submit">Create Time Capsule</button>
+        </form>
+        <div id="countdown"></div>
+        <div id="messageDisplay"></div>
+        <form id="retrieveForm">
+            <label for="uniqueIdInput">Enter Unique ID to Retrieve:</label>
+            <input type="text" id="uniqueIdInput" required>
+            <button type="submit">Retrieve Time Capsule</button>
+        </form>
+    </div>
+    
+    <!-- Firebase App (the core Firebase SDK) is always required and must be first -->
+    <!-- Connect to the Firestore database where time capsule data is stored-->
+     <!--Use Firestore to create new time capsules (Create), retrieve them (Read), update them (Update), and possibly delete them (Delete)-->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
